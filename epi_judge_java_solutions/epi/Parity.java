@@ -14,11 +14,11 @@ import epi.test_framework.GenericTest;
 @SuppressWarnings("unused")
 public class Parity {
     private static final int NUM = 1 << 16;
-    private static final short[] PRE_COMPUTE_PARITIES = new short[NUM];
+    private static final short[] PRE_COMPUTED_PARITIES = new short[NUM];
 
     static {
         for (int i = 0; i < NUM; i++) {
-            PRE_COMPUTE_PARITIES[i] = solFour(i);
+            PRE_COMPUTED_PARITIES[i] = solFour(i);
         }
     }
 
@@ -97,14 +97,10 @@ public class Parity {
     private static short solFive(long x) {
         final int WORD_SIZE = 16;
         final int BIT_MASK = 0xFFFF;
-        return (short) (PRE_COMPUTE_PARITIES[(int) ((x >>> 3 * WORD_SIZE) & BIT_MASK)]
-                ^ PRE_COMPUTE_PARITIES[(int) ((x >>> 2 * WORD_SIZE) & BIT_MASK)]
-                ^ PRE_COMPUTE_PARITIES[(int) ((x >>> WORD_SIZE) & BIT_MASK)]
-                ^ PRE_COMPUTE_PARITIES[(int) (x & BIT_MASK)]);
-    }
-
-    private static short preComputeParity(int x) {
-        return PRE_COMPUTE_PARITIES[x];
+        return (short) (PRE_COMPUTED_PARITIES[(int) ((x >>> 3 * WORD_SIZE) & BIT_MASK)]
+                ^ PRE_COMPUTED_PARITIES[(int) ((x >>> 2 * WORD_SIZE) & BIT_MASK)]
+                ^ PRE_COMPUTED_PARITIES[(int) ((x >>> WORD_SIZE) & BIT_MASK)]
+                ^ PRE_COMPUTED_PARITIES[(int) (x & BIT_MASK)]);
     }
 
     public static void main(String[] args) {
