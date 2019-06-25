@@ -1,41 +1,45 @@
 package epi;
+
 import epi.test_framework.EpiTest;
 import epi.test_framework.GenericTest;
+
 import java.util.List;
+
 public class MinimumDistance3SortedArrays {
 
-  public static class ArrayData implements Comparable<ArrayData> {
-    public int val;
-    public int idx;
+    @EpiTest(testDataFile = "minimum_distance_3_sorted_arrays.tsv")
 
-    public ArrayData(int idx, int val) {
-      this.val = val;
-      this.idx = idx;
+    public static int
+    findMinDistanceSortedArrays(List<List<Integer>> sortedArrays) {
+        // TODO - you fill in here.
+        return 0;
     }
 
-    @Override
-    public int compareTo(ArrayData o) {
-      int result = Integer.compare(val, o.val);
-      if (result == 0) {
-        result = Integer.compare(idx, o.idx);
-      }
-      return result;
+    public static void main(String[] args) {
+        System.exit(
+                GenericTest
+                        .runFromAnnotations(args, "MinimumDistance3SortedArrays.java",
+                                new Object() {
+                                }.getClass().getEnclosingClass())
+                        .ordinal());
     }
-  }
 
-  @EpiTest(testDataFile = "minimum_distance_3_sorted_arrays.tsv")
+    public static class ArrayData implements Comparable<ArrayData> {
+        public int val;
+        public int idx;
 
-  public static int
-  findMinDistanceSortedArrays(List<List<Integer>> sortedArrays) {
-    // TODO - you fill in here.
-    return 0;
-  }
+        public ArrayData(int idx, int val) {
+            this.val = val;
+            this.idx = idx;
+        }
 
-  public static void main(String[] args) {
-    System.exit(
-        GenericTest
-            .runFromAnnotations(args, "MinimumDistance3SortedArrays.java",
-                                new Object() {}.getClass().getEnclosingClass())
-            .ordinal());
-  }
+        @Override
+        public int compareTo(ArrayData o) {
+            int result = Integer.compare(val, o.val);
+            if (result == 0) {
+                result = Integer.compare(idx, o.idx);
+            }
+            return result;
+        }
+    }
 }
