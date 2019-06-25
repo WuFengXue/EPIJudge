@@ -1,5 +1,6 @@
 # JetBrains IDEs (CLion, IntelliJ, and PyCharm)
 .idea
+*.iml
 
 # CLIion CMake builds
 cmake-build-debug
@@ -22,3 +23,4 @@ __pycache__/
 cpp_build
 
 epi_judge_java/java_build/
+out/
