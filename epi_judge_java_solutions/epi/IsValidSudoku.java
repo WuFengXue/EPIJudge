@@ -32,6 +32,12 @@ public class IsValidSudoku {
         return solOne(partialAssignment);
     }
 
+    /**
+     * 思路一：分三次检测，分别检测行、列和方块，利用数字不可重复的特性进行检测
+     * <p>
+     * 时间复杂度：O(n ^ 2)
+     * 空间复杂度：O(n)
+     */
     private static boolean solOne(List<List<Integer>> partialAssignment) {
         final int SIZE = partialAssignment.size();
         // Check row constraints.
