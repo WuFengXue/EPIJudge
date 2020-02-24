@@ -26,7 +26,7 @@ public class TreeInorder {
     @EpiTest(testDataFile = "tree_inorder.tsv")
 
     public static List<Integer> inorderTraversal(BinaryTreeNode<Integer> tree) {
-        return solOne(tree);
+        return solTwo(tree);
     }
 
     /**
