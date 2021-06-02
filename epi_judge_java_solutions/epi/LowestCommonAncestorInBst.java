@@ -64,7 +64,7 @@ public class LowestCommonAncestorInBst {
     /**
      * 思路一：同 {@link LowestCommonAncestor#solTwo(BinaryTreeNode, BinaryTreeNode, BinaryTreeNode)}
      * <p>
-     * 用一个类记录已匹配的节点数和祖先节点，后续遍历树，当一个节点及其子节点同时包含两个目标节点，则该节点为LCA
+     * 用一个类记录已匹配的节点数和祖先节点，后序遍历树，当一个节点及其子节点同时包含两个目标节点，则该节点为LCA
      * <p>
      * 时间复杂度：O(n)
      * <p>
